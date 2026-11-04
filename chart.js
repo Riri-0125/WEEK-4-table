@@ -21,7 +21,7 @@ Papa.parse('dataset_2191_sleep.csv', {
         <td>${row.gestation_time}</td>
         <td>${row.predation_index}</td>
         <td>${row.sleep_exposure}</td>
-        <td>${row.index}</td>
+        <td>${row.danger_index}</td>
         <td>${row.total_sleep}</td>
       `;
 
