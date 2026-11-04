@@ -15,14 +15,14 @@ Papa.parse('dataset_2191_sleep.csv', {
       const tr = document.createElement('tr');
  
       tr.innerHTML = `
-        <td>${row.Body_weight}</td>
-        <td>${row.Brain_weight}</td>
-        <td>${row.Max_life_sapn}</td>
-        <td>${row.Gestation_time}</td>
-        <td>${row.Predation_index}</td>
-        <td>${row.Sleep_exposure}</td>
+        <td>${row.body_weight}</td>
+        <td>${row.brain_weight}</td>
+        <td>${row.max_life_sapn}</td>
+        <td>${row.gestation_time}</td>
+        <td>${row.predation_index}</td>
+        <td>${row.sleep_exposure}</td>
         <td>${row.index}</td>
-        <td>${row.Total_sleep}</td>
+        <td>${row.total_sleep}</td>
       `;
 
         tbody.appendChild(tr); 
