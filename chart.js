@@ -7,11 +7,14 @@ Papa.parse('dataset_2191_sleep.csv', {
  
     console.log("running");
     console.log(results.data);
+    
     const tbody = document.querySelector('#dataTable tbody');
+    
+    const labels = [];
+    const values = [];
  
-    results.data.forEach(row => {
-      results.data.forEach(row => {
- 
+    results.data.forEach((row,index) => {
+      
       const tr = document.createElement('tr');
  
       tr.innerHTML = `
@@ -26,29 +29,26 @@ Papa.parse('dataset_2191_sleep.csv', {
       `;
 
         tbody.appendChild(tr); 
+        labels.push(`Animal ${index + 1}`);
+        values.push(Number(row.total_sleep));
     });
   },
  
-  error: function(err) {
-    console.error("FAILED");
-    console.error(err);
-  }
-});
+
 
 
 
         
- 
+ // Bar chart
     new Chart(
-      document.getElementById('revenueChart'),
+      document.getElementById('sleepChart'),
       {
         type: 'bar',
         data: {
           labels: labels,
           datasets: [{
-            label: 'Streams for US Monthly Minimum Wage',
+            label: 'Total sleep',
             data: values,
-            backgroundColor: '#4e79a7'
           }]
         },
         options: {
@@ -57,17 +57,21 @@ Papa.parse('dataset_2191_sleep.csv', {
               type: 'linear',
               title: {
                 display: true,
-                text: 'Streams for US Monthly Minimum Wage'
+                text: 'Total sleep (hours)'
               }
             }
+            x: {
+                title: {
+                display: true,
+                text: 'Animal'
           }
         }
       }
     );
   }
 });
-function cleanNumber(value) {
-  return Number(
-    String(value).replace(/[^0-9.-]/g, '')
-  );
-}
+error: function(err) {
+        console.error("FAILED");
+        console.error(err);
+    }
+});
