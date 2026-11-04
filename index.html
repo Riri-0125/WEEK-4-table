@@ -9,9 +9,14 @@
     <script src="chart.js"></script>
     <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <h1>Mammals Slepping Data</h1>
+    <h1>Mammals Sleeping Data</h1>
+    
+    <!-- 这里把 canvas 移到表格上面了 -->
+    <div style="margin-bottom: 40px;">
+        <canvas id="sleepChart"></canvas>
+    </div>
+
     <table id="datatable">
         <thead>
             <tr>
@@ -28,8 +33,6 @@
         <tbody>
         </tbody>
     </table>
-    <canvas id="sleepChart"></canvas>
     <p>Data from <a href="https://www.kaggle.com/datasets/mathurinache/sleep-dataset/data">kaggle</a></p>
-    
 </body>
 </html>
